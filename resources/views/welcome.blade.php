@@ -1,132 +1,788 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
 
-        <title>Laravel</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Twitter -->
+    <meta name="twitter:site" content="@themepixels">
+    <meta name="twitter:creator" content="@themepixels">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DashForge">
+    <meta name="twitter:description" content="Responsive Bootstrap 4 Dashboard Template">
+    <meta name="twitter:image" content="http://themepixels.me/dashforge/img/dashforge-social.png">
 
-        <!-- Styles -->
-        <style>
-            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-t{border-top-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-gray-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-gray-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@media (min-width:640px){.sm\:rounded-lg{border-radius:.5rem}.sm\:block{display:block}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}.sm\:h-20{height:5rem}.sm\:ml-0{margin-left:0}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pt-0{padding-top:0}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width:768px){.md\:border-t-0{border-top-width:0}.md\:border-l{border-left-width:1px}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\:bg-gray-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\:bg-gray-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\:border-gray-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\:text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.dark\:text-gray-500{--tw-text-opacity:1;color:#6b7280;color:rgba(107,114,128,var(--tw-text-opacity))}}
-        </style>
+    <!-- Facebook -->
+    <meta property="og:url" content="http://themepixels.me/dashforge">
+    <meta property="og:title" content="DashForge">
+    <meta property="og:description" content="Responsive Bootstrap 4 Dashboard Template">
 
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+    <meta property="og:image" content="http://themepixels.me/dashforge/img/dashforge-social.png">
+    <meta property="og:image:secure_url" content="http://themepixels.me/dashforge/img/dashforge-social.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="600">
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+    <!-- Meta -->
+    <meta name="description" content="Responsive Bootstrap 4 Dashboard Template">
+    <meta name="author" content="ThemePixels">
 
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                    <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto text-gray-700 sm:h-20">
-                        <g clip-path="url(#clip0)" fill="#EF3B2D">
-                            <path d="M248.032 44.676h-16.466v100.23h47.394v-14.748h-30.928V44.676zM337.091 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.431 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162-.001 2.863-.479 5.584-1.432 8.161zM463.954 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.432 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162 0 2.863-.479 5.584-1.432 8.161zM650.772 44.676h-15.606v100.23h15.606V44.676zM365.013 144.906h15.607V93.538h26.776V78.182h-42.383v66.724zM542.133 78.182l-19.616 51.096-19.616-51.096h-15.808l25.617 66.724h19.614l25.617-66.724h-15.808zM591.98 76.466c-19.112 0-34.239 15.706-34.239 35.079 0 21.416 14.641 35.079 36.239 35.079 12.088 0 19.806-4.622 29.234-14.688l-10.544-8.158c-.006.008-7.958 10.449-19.832 10.449-13.802 0-19.612-11.127-19.612-16.884h51.777c2.72-22.043-11.772-40.877-33.023-40.877zm-18.713 29.28c.12-1.284 1.917-16.884 18.589-16.884 16.671 0 18.697 15.598 18.813 16.884h-37.402zM184.068 43.892c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002-35.648-20.524a2.971 2.971 0 00-2.964 0l-35.647 20.522-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v38.979l-29.706 17.103V24.493a3 3 0 00-.103-.776c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002L40.098 1.396a2.971 2.971 0 00-2.964 0L1.487 21.919l-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v122.09c0 1.063.568 2.044 1.489 2.575l71.293 41.045c.156.089.324.143.49.202.078.028.15.074.23.095a2.98 2.98 0 001.524 0c.069-.018.132-.059.2-.083.176-.061.354-.119.519-.214l71.293-41.045a2.971 2.971 0 001.489-2.575v-38.979l34.158-19.666a2.971 2.971 0 001.489-2.575V44.666a3.075 3.075 0 00-.106-.774zM74.255 143.167l-29.648-16.779 31.136-17.926.001-.001 34.164-19.669 29.674 17.084-21.772 12.428-43.555 24.863zm68.329-76.259v33.841l-12.475-7.182-17.231-9.92V49.806l12.475 7.182 17.231 9.92zm2.97-39.335l29.693 17.095-29.693 17.095-29.693-17.095 29.693-17.095zM54.06 114.089l-12.475 7.182V46.733l17.231-9.92 12.475-7.182v74.537l-17.231 9.921zM38.614 7.398l29.693 17.095-29.693 17.095L8.921 24.493 38.614 7.398zM5.938 29.632l12.475 7.182 17.231 9.92v79.676l.001.005-.001.006c0 .114.032.221.045.333.017.146.021.294.059.434l.002.007c.032.117.094.222.14.334.051.124.088.255.156.371a.036.036 0 00.004.009c.061.105.149.191.222.288.081.105.149.22.244.314l.008.01c.084.083.19.142.284.215.106.083.202.178.32.247l.013.005.011.008 34.139 19.321v34.175L5.939 144.867V29.632h-.001zm136.646 115.235l-65.352 37.625V148.31l48.399-27.628 16.953-9.677v33.862zm35.646-61.22l-29.706 17.102V66.908l17.231-9.92 12.475-7.182v33.841z"/>
-                        </g>
-                    </svg>
-                </div>
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/assets/img/favicon.png') }}">
 
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                    <div class="grid grid-cols-1 md:grid-cols-2">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel.com/docs" class="underline text-gray-900 dark:text-white">Documentation</a></div>
-                            </div>
+    <title>DashForge Responsive Bootstrap 4 Dashboard Template</title>
 
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
-                                </div>
-                            </div>
-                        </div>
+    <!-- vendor css -->
+    <link href="{{ asset('/plugins/@fortawesome/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/plugins/ionicons/css/ionicons.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/plugins/jqvmap/jqvmap.min.css') }}" rel="stylesheet">
 
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laracasts.com" class="underline text-gray-900 dark:text-white">Laracasts</a></div>
-                            </div>
+    <!-- DashForge CSS -->
+    <link rel="stylesheet" href="{{ asset('/assets/css/app.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/css/app.dashboard.css') }}">
+</head>
+<body class="page-profile">
 
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel-news.com/" class="underline text-gray-900 dark:text-white">Laravel News</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline">Forge</a>, <a href="https://vapor.laravel.com" class="underline">Vapor</a>, <a href="https://nova.laravel.com" class="underline">Nova</a>, and <a href="https://envoyer.io" class="underline">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline">Telescope</a>, and more.
-                                </div>
-                            </div>
-                        </div>
+<header class="navbar navbar-header navbar-header-fixed">
+    <a href="" id="mainMenuOpen" class="burger-menu"><i data-feather="menu"></i></a>
+    <div class="navbar-brand">
+        <a href="../../index.html" class="df-logo">dash<span>forge</span></a>
+    </div><!-- navbar-brand -->
+    <div id="navbarMenu" class="navbar-menu-wrapper">
+        <div class="navbar-menu-header">
+            <a href="../../index.html" class="df-logo">dash<span>forge</span></a>
+            <a id="mainMenuClose" href=""><i data-feather="x"></i></a>
+        </div><!-- navbar-menu-header -->
+        <ul class="nav navbar-menu">
+            <li class="nav-label pd-l-20 pd-lg-l-25 d-lg-none">Main Navigation</li>
+            <li class="nav-item with-sub active">
+                <a href="" class="nav-link"><i data-feather="pie-chart"></i> Dashboard</a>
+                <ul class="navbar-menu-sub">
+                    <li class="nav-sub-item"><a href="dashboard-one.html" class="nav-sub-link"><i data-feather="bar-chart-2"></i>Sales Monitoring</a></li>
+                    <li class="nav-sub-item"><a href="dashboard-two.html" class="nav-sub-link"><i data-feather="bar-chart-2"></i>Website Analytics</a></li>
+                    <li class="nav-sub-item"><a href="dashboard-three.html" class="nav-sub-link"><i data-feather="bar-chart-2"></i>Cryptocurrency</a></li>
+                    <li class="nav-sub-item"><a href="dashboard-four.html" class="nav-sub-link"><i data-feather="bar-chart-2"></i>Helpdesk Management</a></li>
+                </ul>
+            </li>
+            <li class="nav-item with-sub">
+                <a href="" class="nav-link"><i data-feather="package"></i> Apps</a>
+                <ul class="navbar-menu-sub">
+                    <li class="nav-sub-item"><a href="app-calendar.html" class="nav-sub-link"><i data-feather="calendar"></i>Calendar</a></li>
+                    <li class="nav-sub-item"><a href="app-chat.html" class="nav-sub-link"><i data-feather="message-square"></i>Chat</a></li>
+                    <li class="nav-sub-item"><a href="app-contacts.html" class="nav-sub-link"><i data-feather="users"></i>Contacts</a></li>
+                    <li class="nav-sub-item"><a href="app-file-manager.html" class="nav-sub-link"><i data-feather="file-text"></i>File Manager</a></li>
+                    <li class="nav-sub-item"><a href="app-mail.html" class="nav-sub-link"><i data-feather="mail"></i>Mail</a></li>
+                </ul>
+            </li>
+            <li class="nav-item with-sub">
+                <a href="" class="nav-link"><i data-feather="layers"></i> Pages</a>
+                <div class="navbar-menu-sub">
+                    <div class="d-lg-flex">
+                        <ul>
+                            <li class="nav-label">Authentication</li>
+                            <li class="nav-sub-item"><a href="page-signin.html" class="nav-sub-link"><i data-feather="log-in"></i> Sign In</a></li>
+                            <li class="nav-sub-item"><a href="page-signup.html" class="nav-sub-link"><i data-feather="user-plus"></i> Sign Up</a></li>
+                            <li class="nav-sub-item"><a href="page-verify.html" class="nav-sub-link"><i data-feather="user-check"></i> Verify Account</a></li>
+                            <li class="nav-sub-item"><a href="page-forgot.html" class="nav-sub-link"><i data-feather="shield-off"></i> Forgot Password</a></li>
+                            <li class="nav-label mg-t-20">User Pages</li>
+                            <li class="nav-sub-item"><a href="page-profile-view.html" class="nav-sub-link"><i data-feather="user"></i> View Profile</a></li>
+                            <li class="nav-sub-item"><a href="page-connections.html" class="nav-sub-link"><i data-feather="users"></i> Connections</a></li>
+                            <li class="nav-sub-item"><a href="page-groups.html" class="nav-sub-link"><i data-feather="users"></i> Groups</a></li>
+                            <li class="nav-sub-item"><a href="page-events.html" class="nav-sub-link"><i data-feather="calendar"></i> Events</a></li>
+                        </ul>
+                        <ul>
+                            <li class="nav-label">Error Pages</li>
+                            <li class="nav-sub-item"><a href="page-404.html" class="nav-sub-link"><i data-feather="file"></i> 404 Page Not Found</a></li>
+                            <li class="nav-sub-item"><a href="page-500.html" class="nav-sub-link"><i data-feather="file"></i> 500 Internal Server</a></li>
+                            <li class="nav-sub-item"><a href="page-503.html" class="nav-sub-link"><i data-feather="file"></i> 503 Service Unavailable</a></li>
+                            <li class="nav-sub-item"><a href="page-505.html" class="nav-sub-link"><i data-feather="file"></i> 505 Forbidden</a></li>
+                            <li class="nav-label mg-t-20">Other Pages</li>
+                            <li class="nav-sub-item"><a href="page-timeline.html" class="nav-sub-link"><i data-feather="file-text"></i> Timeline</a></li>
+                            <li class="nav-sub-item"><a href="page-pricing.html" class="nav-sub-link"><i data-feather="file-text"></i> Pricing</a></li>
+                            <li class="nav-sub-item"><a href="page-help-center.html" class="nav-sub-link"><i data-feather="file-text"></i> Help Center</a></li>
+                            <li class="nav-sub-item"><a href="page-invoice.html" class="nav-sub-link"><i data-feather="file-text"></i> Invoice</a></li>
+                        </ul>
                     </div>
-                </div>
+                </div><!-- nav-sub -->
+            </li>
+            <li class="nav-item"><a href="../../components/" class="nav-link"><i data-feather="box"></i> Components</a></li>
+            <li class="nav-item"><a href="../../collections/" class="nav-link"><i data-feather="archive"></i> Collections</a></li>
+        </ul>
+    </div><!-- navbar-menu-wrapper -->
+    <div class="navbar-right">
+        <a id="navbarSearch" href="" class="search-link"><i data-feather="search"></i></a>
+        <div class="dropdown dropdown-message">
+            <a href="" class="dropdown-link new-indicator" data-toggle="dropdown">
+                <i data-feather="message-square"></i>
+                <span>5</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <div class="dropdown-header">New Messages</div>
+                <a href="" class="dropdown-item">
+                    <div class="media">
+                        <div class="avatar avatar-sm avatar-online"><img src="https://via.placeholder.com/350" class="rounded-circle" alt=""></div>
+                        <div class="media-body mg-l-15">
+                            <strong>Socrates Itumay</strong>
+                            <p>nam pluginsero tempore cum so...</p>
+                            <span>Mar 15 12:32pm</span>
+                        </div><!-- media-body -->
+                    </div><!-- media -->
+                </a>
+                <a href="" class="dropdown-item">
+                    <div class="media">
+                        <div class="avatar avatar-sm avatar-online"><img src="https://via.placeholder.com/500" class="rounded-circle" alt=""></div>
+                        <div class="media-body mg-l-15">
+                            <strong>Joyce Chua</strong>
+                            <p>on the other hand we denounce...</p>
+                            <span>Mar 13 04:16am</span>
+                        </div><!-- media-body -->
+                    </div><!-- media -->
+                </a>
+                <a href="" class="dropdown-item">
+                    <div class="media">
+                        <div class="avatar avatar-sm avatar-online"><img src="https://via.placeholder.com/600" class="rounded-circle" alt=""></div>
+                        <div class="media-body mg-l-15">
+                            <strong>Althea Cabardo</strong>
+                            <p>is there anyone who loves...</p>
+                            <span>Mar 13 02:56am</span>
+                        </div><!-- media-body -->
+                    </div><!-- media -->
+                </a>
+                <a href="" class="dropdown-item">
+                    <div class="media">
+                        <div class="avatar avatar-sm avatar-online"><img src="https://via.placeholder.com/500" class="rounded-circle" alt=""></div>
+                        <div class="media-body mg-l-15">
+                            <strong>Adrian Monino</strong>
+                            <p>duis aute irure dolor in repre...</p>
+                            <span>Mar 12 10:40pm</span>
+                        </div><!-- media-body -->
+                    </div><!-- media -->
+                </a>
+                <div class="dropdown-footer"><a href="">View all Messages</a></div>
+            </div><!-- dropdown-menu -->
+        </div><!-- dropdown -->
+        <div class="dropdown dropdown-notification">
+            <a href="" class="dropdown-link new-indicator" data-toggle="dropdown">
+                <i data-feather="bell"></i>
+                <span>2</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <div class="dropdown-header">Notifications</div>
+                <a href="" class="dropdown-item">
+                    <div class="media">
+                        <div class="avatar avatar-sm avatar-online"><img src="https://via.placeholder.com/350" class="rounded-circle" alt=""></div>
+                        <div class="media-body mg-l-15">
+                            <p>Congratulate <strong>Socrates Itumay</strong> for work anniversaries</p>
+                            <span>Mar 15 12:32pm</span>
+                        </div><!-- media-body -->
+                    </div><!-- media -->
+                </a>
+                <a href="" class="dropdown-item">
+                    <div class="media">
+                        <div class="avatar avatar-sm avatar-online"><img src="https://via.placeholder.com/500" class="rounded-circle" alt=""></div>
+                        <div class="media-body mg-l-15">
+                            <p><strong>Joyce Chua</strong> just created a new blog post</p>
+                            <span>Mar 13 04:16am</span>
+                        </div><!-- media-body -->
+                    </div><!-- media -->
+                </a>
+                <a href="" class="dropdown-item">
+                    <div class="media">
+                        <div class="avatar avatar-sm avatar-online"><img src="https://via.placeholder.com/600" class="rounded-circle" alt=""></div>
+                        <div class="media-body mg-l-15">
+                            <p><strong>Althea Cabardo</strong> just created a new blog post</p>
+                            <span>Mar 13 02:56am</span>
+                        </div><!-- media-body -->
+                    </div><!-- media -->
+                </a>
+                <a href="" class="dropdown-item">
+                    <div class="media">
+                        <div class="avatar avatar-sm avatar-online"><img src="https://via.placeholder.com/500" class="rounded-circle" alt=""></div>
+                        <div class="media-body mg-l-15">
+                            <p><strong>Adrian Monino</strong> added new comment on your photo</p>
+                            <span>Mar 12 10:40pm</span>
+                        </div><!-- media-body -->
+                    </div><!-- media -->
+                </a>
+                <div class="dropdown-footer"><a href="">View all Notifications</a></div>
+            </div><!-- dropdown-menu -->
+        </div><!-- dropdown -->
+        <div class="dropdown dropdown-profile">
+            <a href="" class="dropdown-link" data-toggle="dropdown" data-display="static">
+                <div class="avatar avatar-sm"><img src="https://via.placeholder.com/500" class="rounded-circle" alt=""></div>
+            </a><!-- dropdown-link -->
+            <div class="dropdown-menu dropdown-menu-right tx-13">
+                <div class="avatar avatar-lg mg-b-15"><img src="https://via.placeholder.com/500" class="rounded-circle" alt=""></div>
+                <h6 class="tx-semibold mg-b-5">Katherine Pechon</h6>
+                <p class="mg-b-25 tx-12 tx-color-03">Administrator</p>
 
-                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 sm:text-left">
-                        <div class="flex items-center">
-                            <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor" class="-mt-px w-5 h-5 text-gray-400">
-                                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                            </svg>
+                <a href="" class="dropdown-item"><i data-feather="edit-3"></i> Edit Profile</a>
+                <a href="page-profile-view.html" class="dropdown-item"><i data-feather="user"></i> View Profile</a>
+                <div class="dropdown-divider"></div>
+                <a href="page-help-center.html" class="dropdown-item"><i data-feather="help-circle"></i> Help Center</a>
+                <a href="" class="dropdown-item"><i data-feather="life-buoy"></i> Forum</a>
+                <a href="" class="dropdown-item"><i data-feather="settings"></i>Account Settings</a>
+                <a href="" class="dropdown-item"><i data-feather="settings"></i>Privacy Settings</a>
+                <a href="page-signin.html" class="dropdown-item"><i data-feather="log-out"></i>Sign Out</a>
+            </div><!-- dropdown-menu -->
+        </div><!-- dropdown -->
+    </div><!-- navbar-right -->
+    <div class="navbar-search">
+        <div class="navbar-search-header">
+            <input type="search" class="form-control" placeholder="Type and hit enter to search...">
+            <button class="btn"><i data-feather="search"></i></button>
+            <a id="navbarSearchClose" href="" class="link-03 mg-l-5 mg-lg-l-10"><i data-feather="x"></i></a>
+        </div><!-- navbar-search-header -->
+        <div class="navbar-search-body">
+            <label class="tx-10 tx-medium tx-uppercase tx-spacing-1 tx-color-03 mg-b-10 d-flex align-items-center">Recent Searches</label>
+            <ul class="list-unstyled">
+                <li><a href="dashboard-one.html">modern dashboard</a></li>
+                <li><a href="app-calendar.html">calendar app</a></li>
+                <li><a href="../../collections/modal.html">modal examples</a></li>
+                <li><a href="../../components/el-avatar.html">avatar</a></li>
+            </ul>
 
-                            <a href="https://laravel.bigcartel.com" class="ml-1 underline">
-                                Shop
-                            </a>
+            <hr class="mg-y-30 bd-0">
 
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="ml-4 -mt-px w-5 h-5 text-gray-400">
-                                <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                            </svg>
+            <label class="tx-10 tx-medium tx-uppercase tx-spacing-1 tx-color-03 mg-b-10 d-flex align-items-center">Search Suggestions</label>
 
-                            <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">
-                                Sponsor
-                            </a>
-                        </div>
-                    </div>
+            <ul class="list-unstyled">
+                <li><a href="dashboard-one.html">cryptocurrency</a></li>
+                <li><a href="app-calendar.html">button groups</a></li>
+                <li><a href="../../collections/modal.html">form elements</a></li>
+                <li><a href="../../components/el-avatar.html">contact app</a></li>
+            </ul>
+        </div><!-- navbar-search-body -->
+    </div><!-- navbar-search -->
+</header><!-- navbar -->
 
-                    <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-                    </div>
-                </div>
+<div class="content content-fixed">
+    <div class="container pd-x-0 pd-lg-x-10 pd-xl-x-0">
+        <div class="d-sm-flex align-items-center justify-content-between mg-b-20 mg-lg-b-25 mg-xl-b-30">
+            <div>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb breadcrumb-style1 mg-b-10">
+                        <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Sales Monitoring</li>
+                    </ol>
+                </nav>
+                <h4 class="mg-b-0 tx-spacing--1">Welcome to Dashboard</h4>
+            </div>
+            <div class="d-none d-md-block">
+                <button class="btn btn-sm pd-x-15 btn-white btn-uppercase"><i data-feather="mail" class="wd-10 mg-r-5"></i> Email</button>
+                <button class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5"><i data-feather="printer" class="wd-10 mg-r-5"></i> Print</button>
+                <button class="btn btn-sm pd-x-15 btn-primary btn-uppercase mg-l-5"><i data-feather="file" class="wd-10 mg-r-5"></i> Generate Report</button>
             </div>
         </div>
-    </body>
+
+        <div class="row row-xs">
+            <div class="col-sm-6 col-lg-3">
+                <div class="card card-body">
+                    <h6 class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">Conversion Rate</h6>
+                    <div class="d-flex d-lg-block d-xl-flex align-items-end">
+                        <h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1">0.81%</h3>
+                        <p class="tx-11 tx-color-03 mg-b-0"><span class="tx-medium tx-success">1.2% <i class="icon ion-md-arrow-up"></i></span> than last week</p>
+                    </div>
+                    <div class="chart-three">
+                        <div id="flotChart3" class="flot-chart ht-30"></div>
+                    </div><!-- chart-three -->
+                </div>
+            </div><!-- col -->
+            <div class="col-sm-6 col-lg-3 mg-t-10 mg-sm-t-0">
+                <div class="card card-body">
+                    <h6 class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">Unique Purchases</h6>
+                    <div class="d-flex d-lg-block d-xl-flex align-items-end">
+                        <h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1">3,137</h3>
+                        <p class="tx-11 tx-color-03 mg-b-0"><span class="tx-medium tx-danger">0.7% <i class="icon ion-md-arrow-down"></i></span> than last week</p>
+                    </div>
+                    <div class="chart-three">
+                        <div id="flotChart4" class="flot-chart ht-30"></div>
+                    </div><!-- chart-three -->
+                </div>
+            </div><!-- col -->
+            <div class="col-sm-6 col-lg-3 mg-t-10 mg-lg-t-0">
+                <div class="card card-body">
+                    <h6 class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">Avg. Order Value</h6>
+                    <div class="d-flex d-lg-block d-xl-flex align-items-end">
+                        <h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1">$306.20</h3>
+                        <p class="tx-11 tx-color-03 mg-b-0"><span class="tx-medium tx-danger">0.3% <i class="icon ion-md-arrow-down"></i></span> than last week</p>
+                    </div>
+                    <div class="chart-three">
+                        <div id="flotChart5" class="flot-chart ht-30"></div>
+                    </div><!-- chart-three -->
+                </div>
+            </div><!-- col -->
+            <div class="col-sm-6 col-lg-3 mg-t-10 mg-lg-t-0">
+                <div class="card card-body">
+                    <h6 class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">Order Quantity</h6>
+                    <div class="d-flex d-lg-block d-xl-flex align-items-end">
+                        <h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1">1,650</h3>
+                        <p class="tx-11 tx-color-03 mg-b-0"><span class="tx-medium tx-success">2.1% <i class="icon ion-md-arrow-up"></i></span> than last week</p>
+                    </div>
+                    <div class="chart-three">
+                        <div id="flotChart6" class="flot-chart ht-30"></div>
+                    </div><!-- chart-three -->
+                </div>
+            </div><!-- col -->
+            <div class="col-lg-8 col-xl-7 mg-t-10">
+                <div class="card">
+                    <div class="card-header pd-y-20 d-md-flex align-items-center justify-content-between">
+                        <h6 class="mg-b-0">Account & Monthly Recurring Revenue Growth</h6>
+                        <ul class="list-inline d-flex mg-t-20 mg-sm-t-10 mg-md-t-0 mg-b-0">
+                            <li class="list-inline-item d-flex align-items-center">
+                                <span class="d-block wd-10 ht-10 bg-df-1 rounded mg-r-5"></span>
+                                <span class="tx-sans tx-uppercase tx-10 tx-medium tx-color-03">Growth Actual</span>
+                            </li>
+                            <li class="list-inline-item d-flex align-items-center mg-l-5">
+                                <span class="d-block wd-10 ht-10 bg-df-2 rounded mg-r-5"></span>
+                                <span class="tx-sans tx-uppercase tx-10 tx-medium tx-color-03">Actual</span>
+                            </li>
+                            <li class="list-inline-item d-flex align-items-center mg-l-5">
+                                <span class="d-block wd-10 ht-10 bg-df-3 rounded mg-r-5"></span>
+                                <span class="tx-sans tx-uppercase tx-10 tx-medium tx-color-03">Plan</span>
+                            </li>
+                        </ul>
+                    </div><!-- card-header -->
+                    <div class="card-body pos-relative pd-0">
+                        <div class="pos-absolute t-20 l-20 wd-xl-100p z-index-10">
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <h3 class="tx-normal tx-rubik tx-spacing--2 mg-b-5">$620,076</h3>
+                                    <h6 class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-10">MRR Growth</h6>
+                                    <p class="mg-b-0 tx-12 tx-color-03">Measure How Fast You’re Growing Monthly Recurring Revenue. <a href="">Learn More</a></p>
+                                </div><!-- col -->
+                                <div class="col-sm-5 mg-t-20 mg-sm-t-0">
+                                    <h3 class="tx-normal tx-rubik tx-spacing--2 mg-b-5">$1,200</h3>
+                                    <h6 class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-10">Avg. MRR/Customer</h6>
+                                    <p class="mg-b-0 tx-12 tx-color-03">The revenue generated per account on a monthly or yearly basis. <a href="">Learn More</a></p>
+                                </div><!-- col -->
+                            </div><!-- row -->
+                        </div>
+
+                        <div class="chart-one">
+                            <div id="flotChart" class="flot-chart"></div>
+                        </div><!-- chart-one -->
+                    </div><!-- card-body -->
+                </div><!-- card -->
+            </div>
+            <div class="col-lg-4 col-xl-5 mg-t-10">
+                <div class="card">
+                    <div class="card-header pd-t-20 pd-b-0 bd-b-0">
+                        <h6 class="mg-b-5">Account Retention</h6>
+                        <p class="tx-12 tx-color-03 mg-b-0">Number of customers who have active subscription with you.</p>
+                    </div><!-- card-header -->
+                    <div class="card-body pd-20">
+                        <div class="chart-two mg-b-20">
+                            <div id="flotChart2" class="flot-chart"></div>
+                        </div><!-- chart-two -->
+                        <div class="row">
+                            <div class="col-sm">
+                                <h4 class="tx-normal tx-rubik tx-spacing--1 mg-b-5">$1,680<small>.50</small></h4>
+                                <p class="tx-11 tx-uppercase tx-spacing-1 tx-semibold mg-b-10 tx-primary">Expansions</p>
+                                <div class="tx-12 tx-color-03">Customers who have upgraded the level of your products or service.</div>
+                            </div><!-- col -->
+                            <div class="col-sm mg-t-20 mg-sm-t-0">
+                                <h4 class="tx-normal tx-rubik tx-spacing--1 mg-b-5">$1,520<small>.00</small></h4>
+                                <p class="tx-11 tx-uppercase tx-spacing-1 tx-semibold mg-b-10 tx-pink">Cancellations</p>
+                                <div class="tx-12 tx-color-03">Customers who have ended their subscription with you.</div>
+                            </div><!-- col -->
+                        </div><!-- row -->
+                    </div><!-- card-body -->
+                </div><!-- card -->
+            </div>
+            <div class="col-md-6 col-xl-4 mg-t-10 order-md-1 order-xl-0">
+                <div class="card ht-lg-100p">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                        <h6 class="mg-b-0">Sales Revenue</h6>
+                        <div class="tx-13 d-flex align-items-center">
+                            <span class="mg-r-5">Country:</span> <a href="" class="d-flex align-items-center link-03 lh-0">USA <i class="icon ion-ios-arrow-down mg-l-5"></i></a>
+                        </div>
+                    </div><!-- card-header -->
+                    <div class="card-body pd-0">
+                        <div class="pd-y-25 pd-x-20">
+                            <div id="vmap" class="ht-200"></div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-borderless table-dashboard table-dashboard-one">
+                                <thead>
+                                <tr>
+                                    <th class="wd-40">States</th>
+                                    <th class="wd-25 text-right">Orders</th>
+                                    <th class="wd-35 text-right">Earnings</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="tx-medium">California</td>
+                                    <td class="text-right">12,201</td>
+                                    <td class="text-right">$150,200.80</td>
+                                </tr>
+                                <tr>
+                                    <td class="tx-medium">Texas</td>
+                                    <td class="text-right">11,950</td>
+                                    <td class="text-right">$138,910.20</td>
+                                </tr>
+                                <tr>
+                                    <td class="tx-medium">Wyoming</td>
+                                    <td class="text-right">11,198</td>
+                                    <td class="text-right">$132,050.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="tx-medium">Florida</td>
+                                    <td class="text-right">9,885</td>
+                                    <td class="text-right">$127,762.10</td>
+                                </tr>
+                                <tr>
+                                    <td class="tx-medium">New York</td>
+                                    <td class="text-right">8,560</td>
+                                    <td class="text-right">$117,087.50</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- table-responsive -->
+                    </div><!-- card-body -->
+                </div><!-- card -->
+            </div><!-- col -->
+            <div class="col-lg-12 col-xl-8 mg-t-10">
+                <div class="card mg-b-10">
+                    <div class="card-header pd-t-20 d-sm-flex align-items-start justify-content-between bd-b-0 pd-b-0">
+                        <div>
+                            <h6 class="mg-b-5">Your Most Recent Earnings</h6>
+                            <p class="tx-13 tx-color-03 mg-b-0">Your sales and referral earnings over the last 30 days</p>
+                        </div>
+                        <div class="d-flex mg-t-20 mg-sm-t-0">
+                            <div class="btn-group flex-fill">
+                                <button class="btn btn-white btn-xs active">Range</button>
+                                <button class="btn btn-white btn-xs">Period</button>
+                            </div>
+                        </div>
+                    </div><!-- card-header -->
+                    <div class="card-body pd-y-30">
+                        <div class="d-sm-flex">
+                            <div class="media">
+                                <div class="wd-40 wd-md-50 ht-40 ht-md-50 bg-teal tx-white mg-r-10 mg-md-r-10 d-flex align-items-center justify-content-center rounded op-6">
+                                    <i data-feather="bar-chart-2"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h6 class="tx-sans tx-uppercase tx-10 tx-spacing-1 tx-color-03 tx-semibold tx-nowrap mg-b-5 mg-md-b-8">Gross Earnings</h6>
+                                    <h4 class="tx-20 tx-sm-18 tx-md-24 tx-normal tx-rubik mg-b-0">$1,958,104</h4>
+                                </div>
+                            </div>
+                            <div class="media mg-t-20 mg-sm-t-0 mg-sm-l-15 mg-md-l-40">
+                                <div class="wd-40 wd-md-50 ht-40 ht-md-50 bg-pink tx-white mg-r-10 mg-md-r-10 d-flex align-items-center justify-content-center rounded op-5">
+                                    <i data-feather="bar-chart-2"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h6 class="tx-sans tx-uppercase tx-10 tx-spacing-1 tx-color-03 tx-semibold mg-b-5 mg-md-b-8">Tax Withheld</h6>
+                                    <h4 class="tx-20 tx-sm-18 tx-md-24 tx-normal tx-rubik mg-b-0">$234,769<small>.50</small></h4>
+                                </div>
+                            </div>
+                            <div class="media mg-t-20 mg-sm-t-0 mg-sm-l-15 mg-md-l-40">
+                                <div class="wd-40 wd-md-50 ht-40 ht-md-50 bg-primary tx-white mg-r-10 mg-md-r-10 d-flex align-items-center justify-content-center rounded op-4">
+                                    <i data-feather="bar-chart-2"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h6 class="tx-sans tx-uppercase tx-10 tx-spacing-1 tx-color-03 tx-semibold mg-b-5 mg-md-b-8">Net Earnings</h6>
+                                    <h4 class="tx-20 tx-sm-18 tx-md-24 tx-normal tx-rubik mg-b-0">$1,608,469<small>.50</small></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- card-body -->
+                    <div class="table-responsive">
+                        <table class="table table-dashboard mg-b-0">
+                            <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th class="text-right">Sales Count</th>
+                                <th class="text-right">Gross Earnings</th>
+                                <th class="text-right">Tax Withheld</th>
+                                <th class="text-right">Net Earnings</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="tx-color-03 tx-normal">03/05/2018</td>
+                                <td class="tx-medium text-right">1,050</td>
+                                <td class="text-right tx-teal">+ $32,580.00</td>
+                                <td class="text-right tx-pink">- $3,023.10</td>
+                                <td class="tx-medium text-right">$28,670.90 <span class="mg-l-5 tx-10 tx-normal tx-success"><i class="icon ion-md-arrow-up"></i> 4.5%</span></td>
+                            </tr>
+                            <tr>
+                                <td class="tx-color-03 tx-normal">03/04/2018</td>
+                                <td class="tx-medium text-right">980</td>
+                                <td class="text-right tx-teal">+ $30,065.10</td>
+                                <td class="text-right tx-pink">- $2,780.00</td>
+                                <td class="tx-medium text-right">$26,930.40  <span class="mg-l-5 tx-10 tx-normal tx-danger"><i class="icon ion-md-arrow-down"></i> 0.8%</span></td>
+                            </tr>
+                            <tr>
+                                <td class="tx-color-03 tx-normal">03/04/2018</td>
+                                <td class="tx-medium text-right">980</td>
+                                <td class="text-right tx-teal">+ $30,065.10</td>
+                                <td class="text-right tx-pink">- $2,780.00</td>
+                                <td class="tx-medium text-right">$26,930.40  <span class="mg-l-5 tx-10 tx-normal tx-danger"><i class="icon ion-md-arrow-down"></i> 0.8%</span></td>
+                            </tr>
+                            <tr>
+                                <td class="tx-color-03 tx-normal">03/04/2018</td>
+                                <td class="tx-medium text-right">980</td>
+                                <td class="text-right tx-teal">+ $30,065.10</td>
+                                <td class="text-right tx-pink">- $2,780.00</td>
+                                <td class="tx-medium text-right">$26,930.40  <span class="mg-l-5 tx-10 tx-normal tx-danger"><i class="icon ion-md-arrow-down"></i> 0.8%</span></td>
+                            </tr>
+                            <tr>
+                                <td class="tx-color-03 tx-normal">03/04/2018</td>
+                                <td class="tx-medium text-right">980</td>
+                                <td class="text-right tx-teal">+ $30,065.10</td>
+                                <td class="text-right tx-pink">- $2,780.00</td>
+                                <td class="tx-medium text-right">$26,930.40  <span class="mg-l-5 tx-10 tx-normal tx-danger"><i class="icon ion-md-arrow-down"></i> 0.8%</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div><!-- table-responsive -->
+                </div><!-- card -->
+
+                <div class="card card-body ht-lg-100">
+                    <div class="media">
+                        <span class="tx-color-04"><i data-feather="download" class="wd-60 ht-60"></i></span>
+                        <div class="media-body mg-l-20">
+                            <h6 class="mg-b-10">Download your earnings in CSV format.</h6>
+                            <p class="tx-color-03 mg-b-0">Open it in a spreadsheet and perform your own calculations, graphing etc. The CSV file contains additional details, such as the buyer location. </p>
+                        </div>
+                    </div><!-- media -->
+                </div>
+            </div><!-- col -->
+            <div class="col-md-6 col-xl-4 mg-t-10">
+                <div class="card ht-100p">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                        <h6 class="mg-b-0">Transaction History</h6>
+                        <div class="d-flex tx-18">
+                            <a href="" class="link-03 lh-0"><i class="icon ion-md-refresh"></i></a>
+                            <a href="" class="link-03 lh-0 mg-l-10"><i class="icon ion-md-more"></i></a>
+                        </div>
+                    </div>
+                    <ul class="list-group list-group-flush tx-13">
+                        <li class="list-group-item d-flex pd-sm-x-20">
+                            <div class="avatar d-none d-sm-block"><span class="avatar-initial rounded-circle bg-teal"><i class="icon ion-md-checkmark"></i></span></div>
+                            <div class="pd-sm-l-10">
+                                <p class="tx-medium mg-b-0">Payment from #10322</p>
+                                <small class="tx-12 tx-color-03 mg-b-0">Mar 21, 2019, 3:30pm</small>
+                            </div>
+                            <div class="mg-l-auto text-right">
+                                <p class="tx-medium mg-b-0">+ $250.00</p>
+                                <small class="tx-12 tx-success mg-b-0">Completed</small>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex pd-sm-x-20">
+                            <div class="avatar d-none d-sm-block"><span class="avatar-initial rounded-circle bg-indigo op-5"><i class="icon ion-md-return-left"></i></span></div>
+                            <div class="pd-sm-l-10">
+                                <p class="tx-medium mg-b-2">Process refund to #00910</p>
+                                <small class="tx-12 tx-color-03 mg-b-0">Mar 21, 2019, 1:00pm</small>
+                            </div>
+                            <div class="mg-l-auto text-right">
+                                <p class="tx-medium mg-b-2">-$16.50</p>
+                                <small class="tx-12 tx-success mg-b-0">Completed</small>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex pd-sm-x-20">
+                            <div class="avatar d-none d-sm-block"><span class="avatar-initial rounded-circle bg-orange op-5"><i class="icon ion-md-bus"></i></span></div>
+                            <div class="pd-sm-l-10">
+                                <p class="tx-medium mg-b-2">Process delivery to #44333</p>
+                                <small class="tx-12 tx-color-03 mg-b-0">Mar 20, 2019, 11:40am</small>
+                            </div>
+                            <div class="mg-l-auto text-right">
+                                <p class="tx-medium mg-b-2">3 Items</p>
+                                <small class="tx-12 tx-info mg-b-0">For pickup</small>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex pd-sm-x-20">
+                            <div class="avatar d-none d-sm-block"><span class="avatar-initial rounded-circle bg-teal"><i class="icon ion-md-checkmark"></i></span></div>
+                            <div class="pd-sm-l-10">
+                                <p class="tx-medium mg-b-0">Payment from #023328</p>
+                                <small class="tx-12 tx-color-03 mg-b-0">Mar 20, 2019, 10:30pm</small>
+                            </div>
+                            <div class="mg-l-auto text-right">
+                                <p class="tx-medium mg-b-0">+ $129.50</p>
+                                <small class="tx-12 tx-success mg-b-0">Completed</small>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex pd-sm-x-20">
+                            <div class="avatar d-none d-sm-block"><span class="avatar-initial rounded-circle bg-gray-400"><i class="icon ion-md-close"></i></span></div>
+                            <div class="pd-sm-l-10">
+                                <p class="tx-medium mg-b-0">Payment failed from #087651</p>
+                                <small class="tx-12 tx-color-03 mg-b-0">Mar 19, 2019, 12:54pm</small>
+                            </div>
+                            <div class="mg-l-auto text-right">
+                                <p class="tx-medium mg-b-0">$150.00</p>
+                                <small class="tx-12 tx-danger mg-b-0">Declined</small>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="card-footer text-center tx-13">
+                        <a href="" class="link-03">View All Transactions <i class="icon ion-md-arrow-down mg-l-5"></i></a>
+                    </div><!-- card-footer -->
+                </div><!-- card -->
+            </div>
+            <div class="col-md-6 col-xl-4 mg-t-10">
+                <div class="card ht-100p">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                        <h6 class="mg-b-0">New Customers</h6>
+                        <div class="d-flex align-items-center tx-18">
+                            <a href="" class="link-03 lh-0"><i class="icon ion-md-refresh"></i></a>
+                            <a href="" class="link-03 lh-0 mg-l-10"><i class="icon ion-md-more"></i></a>
+                        </div>
+                    </div>
+                    <ul class="list-group list-group-flush tx-13">
+                        <li class="list-group-item d-flex pd-sm-x-20">
+                            <div class="avatar"><span class="avatar-initial rounded-circle bg-gray-600">s</span></div>
+                            <div class="pd-l-10">
+                                <p class="tx-medium mg-b-0">Socrates Itumay</p>
+                                <small class="tx-12 tx-color-03 mg-b-0">Customer ID#00222</small>
+                            </div>
+                            <div class="mg-l-auto d-flex align-self-center">
+                                <nav class="nav nav-icon-only">
+                                    <a href="" class="nav-link d-none d-sm-block"><i data-feather="mail"></i></a>
+                                    <a href="" class="nav-link d-none d-sm-block"><i data-feather="slash"></i></a>
+                                    <a href="" class="nav-link d-none d-sm-block"><i data-feather="user"></i></a>
+                                    <a href="" class="nav-link d-sm-none"><i data-feather="more-vertical"></i></a>
+                                </nav>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex pd-x-20">
+                            <div class="avatar"><img src="https://via.placeholder.com/500" class="rounded-circle" alt=""></div>
+                            <div class="pd-l-10">
+                                <p class="tx-medium mg-b-0">Reynante Labares</p>
+                                <small class="tx-12 tx-color-03 mg-b-0">Customer ID#00221</small>
+                            </div>
+                            <div class="mg-l-auto d-flex align-self-center">
+                                <nav class="nav nav-icon-only">
+                                    <a href="" class="nav-link d-none d-sm-block"><i data-feather="mail"></i></a>
+                                    <a href="" class="nav-link d-none d-sm-block"><i data-feather="slash"></i></a>
+                                    <a href="" class="nav-link d-none d-sm-block"><i data-feather="user"></i></a>
+                                    <a href="" class="nav-link d-sm-none"><i data-feather="more-vertical"></i></a>
+                                </nav>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex pd-x-20">
+                            <div class="avatar"><img src="https://via.placeholder.com/500" class="rounded-circle" alt=""></div>
+                            <div class="pd-l-10">
+                                <p class="tx-medium mg-b-0">Marianne Audrey</p>
+                                <small class="tx-12 tx-color-03 mg-b-0">Customer ID#00220</small>
+                            </div>
+                            <div class="mg-l-auto d-flex align-self-center">
+                                <nav class="nav nav-icon-only">
+                                    <a href="" class="nav-link d-none d-sm-block"><i data-feather="mail"></i></a>
+                                    <a href="" class="nav-link d-none d-sm-block"><i data-feather="slash"></i></a>
+                                    <a href="" class="nav-link d-none d-sm-block"><i data-feather="user"></i></a>
+                                    <a href="" class="nav-link d-sm-none"><i data-feather="more-vertical"></i></a>
+                                </nav>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex pd-x-20">
+                            <div class="avatar"><span class="avatar-initial rounded-circle bg-indigo op-5">o</span></div>
+                            <div class="pd-l-10">
+                                <p class="tx-medium mg-b-0">Owen Bongcaras</p>
+                                <small class="tx-12 tx-color-03 mg-b-0">Customer ID#00219</small>
+                            </div>
+                            <div class="mg-l-auto d-flex align-self-center">
+                                <nav class="nav nav-icon-only">
+                                    <a href="" class="nav-link d-none d-sm-block"><i data-feather="mail"></i></a>
+                                    <a href="" class="nav-link d-none d-sm-block"><i data-feather="slash"></i></a>
+                                    <a href="" class="nav-link d-none d-sm-block"><i data-feather="user"></i></a>
+                                    <a href="" class="nav-link d-sm-none"><i data-feather="more-vertical"></i></a>
+                                </nav>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex pd-x-20">
+                            <div class="avatar"><span class="avatar-initial rounded-circle bg-primary op-5">k</span></div>
+                            <div class="pd-l-10">
+                                <p class="tx-medium mg-b-0">Kirby Avendula</p>
+                                <small class="tx-12 tx-color-03 mg-b-0">Customer ID#00218</small>
+                            </div>
+                            <div class="mg-l-auto d-flex align-self-center">
+                                <nav class="nav nav-icon-only">
+                                    <a href="" class="nav-link d-none d-sm-block"><i data-feather="mail"></i></a>
+                                    <a href="" class="nav-link d-none d-sm-block"><i data-feather="slash"></i></a>
+                                    <a href="" class="nav-link d-none d-sm-block"><i data-feather="user"></i></a>
+                                    <a href="" class="nav-link d-sm-none"><i data-feather="more-vertical"></i></a>
+                                </nav>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="card-footer text-center tx-13">
+                        <a href="" class="link-03">View More Customers <i class="icon ion-md-arrow-down mg-l-5"></i></a>
+                    </div><!-- card-footer -->
+                </div><!-- card -->
+            </div>
+            <div class="col-md-6 col-xl-4 mg-t-10">
+                <div class="card ht-lg-100p">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                        <h6 class="mg-b-0">Real-Time Sales</h6>
+                        <ul class="list-inline d-flex mg-b-0">
+                            <li class="list-inline-item d-flex align-items-center">
+                                <span class="d-block wd-10 ht-10 bg-df-2 rounded mg-r-5"></span>
+                                <span class="tx-sans tx-uppercase tx-10 tx-medium tx-color-03">Today</span>
+                            </li>
+                            <li class="list-inline-item d-flex align-items-center mg-l-10">
+                                <span class="d-block wd-10 ht-10 bg-df-3 rounded mg-r-5"></span>
+                                <span class="tx-sans tx-uppercase tx-10 tx-medium tx-color-03">Yesterday</span>
+                            </li>
+                        </ul>
+                    </div><!-- card-header -->
+                    <div class="card-body pd-b-0">
+                        <div class="row mg-b-20">
+                            <div class="col">
+                                <h4 class="tx-normal tx-rubik tx-spacing--1 mg-b-10">$150,200 <small class="tx-11 tx-success letter-spacing--2"><i class="icon ion-md-arrow-up"></i> 0.20%</small></h4>
+                                <p class="tx-11 tx-uppercase tx-spacing-1 tx-medium tx-color-03">Total Sales</p>
+                            </div>
+                            <div class="col">
+                                <h4 class="tx-normal tx-rubik tx-spacing--1 mg-b-10">$21,880 <small class="tx-11 tx-danger letter-spacing--2"><i class="icon ion-md-arrow-down"></i> 1.04%</small></h4>
+                                <p class="tx-11 tx-uppercase tx-spacing-1 tx-medium tx-color-03">Avg. Sales Per Day</p>
+                            </div>
+                        </div><!-- row -->
+                        <div class="chart-five">
+                            <div><canvas id="chartBar1"></canvas></div>
+                        </div>
+                    </div><!-- card-body -->
+                </div>
+            </div>
+        </div><!-- row -->
+    </div><!-- container -->
+</div><!-- content -->
+
+<footer class="footer">
+    <div>
+        <span>&copy; 2019 DashForge v1.0.0. </span>
+        <span>Created by <a href="http://themepixels.me">ThemePixels</a></span>
+    </div>
+    <div>
+        <nav class="nav">
+            <a href="https://themeforest.net/licenses/standard" class="nav-link">Licenses</a>
+            <a href="../../change-log.html" class="nav-link">Change Log</a>
+            <a href="https://discordapp.com/invite/RYqkVuw" class="nav-link">Get Help</a>
+        </nav>
+    </div>
+</footer>
+
+<script src="{{ asset('/plugins/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('/plugins/feather-icons/feather.min.js') }}"></script>
+<script src="{{ asset('/plugins/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
+<script src="{{ asset('/plugins/jquery.flot/jquery.flot.js') }}"></script>
+<script src="{{ asset('/plugins/jquery.flot/jquery.flot.stack.js') }}"></script>
+<script src="{{ asset('/plugins/jquery.flot/jquery.flot.resize.js') }}"></script>
+<script src="{{ asset('/plugins/chart.js/Chart.bundle.min.js') }}"></script>
+<script src="{{ asset('/plugins/jqvmap/jquery.vmap.min.js') }}"></script>
+<script src="{{ asset('/plugins/jqvmap/maps/jquery.vmap.usa.js') }}"></script>
+
+<script src="{{ asset('/assets/js/dashforge.js') }}"></script>
+<script src="{{ asset('/assets/js/dashforge.sampledata.js') }}"></script>
+<script src="{{ asset('/assets/js/dashboard-one.js') }}"></script>
+
+<!-- append theme customizer -->
+<script src="{{ asset('/plugins/js-cookie/js.cookie.js') }}"></script>
+<script src="{{ asset('/assets/js/app.settings.js') }}"></script>
+
+
+</body>
 </html>
