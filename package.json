@@ -63,7 +63,7 @@
         "typicons.font": "^2.0.9"
     },
     "scripts": {
-        "develop": "gulp develop",
+        "dev": "gulp develop",
         "watch": "gulp watch"
     }
 }

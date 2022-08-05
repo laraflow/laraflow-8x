@@ -781,7 +781,7 @@
 
 <!-- append theme customizer -->
 <script src="{{ asset('/plugins/js-cookie/js.cookie.js') }}"></script>
-<script src="{{ asset('/assets/js/app.settings.js') }}"></script>
+<script src="{{ asset('/assets/js/dashforge.settings.js') }}"></script>
 
 
 </body>
