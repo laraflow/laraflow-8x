@@ -223,6 +223,19 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Application Favicon
+    |--------------------------------------------------------------------------
+    |
+    | Preloader that will display when as webpage is very slow.
+    | Null if we don't want preloader default enabled
+    |
+    | @var string|null
+    */
+
+    'favicon' => 'assets/img/logo.png',
+
+    /*
+    |--------------------------------------------------------------------------
     | Autoloader Service Providers
     |--------------------------------------------------------------------------
     |

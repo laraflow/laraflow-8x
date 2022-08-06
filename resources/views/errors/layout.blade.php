@@ -7,7 +7,7 @@
     <title>@yield('title', 'Index') | {{ config('app.name', 'Laraflow') }}</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset(config('app.favicon')) }}">
 
 
     <!-- vendor css -->
