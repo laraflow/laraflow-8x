@@ -13,6 +13,7 @@ if (! function_exists('resource')) {
         if (preg_match('^(http|https|//)', $path) > 0) {
             return $path;
         }
+
         return app('url')->asset($path, $secure);
     }
 }
