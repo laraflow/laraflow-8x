@@ -136,7 +136,94 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Autoloaded Service Providers
+    | Application Preloader
+    |--------------------------------------------------------------------------
+    |
+    | Preloader that will display when as webpage is very slow.
+    | Null if we don't want preloader default enabled
+    |
+    | @var string|null
+    */
+
+    'preloader' => 'assets/img/logo.png',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Application Default Date & Time Format
+    |--------------------------------------------------------------------------
+    |
+    | Format for date and time setting
+    |
+    | @var string|null
+    */
+
+    'datetime' => 'd M Y h:i a',
+
+    'date' => 'd M Y',
+
+    'time' => 'h:i a',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Application JavaScript Default Date & Time Format
+    |--------------------------------------------------------------------------
+    |
+    | Null if we don't want preloader default enabled
+    |
+    | @ref use 'js' as prefix for every field
+    | @ref follow moment.js for details
+    |
+    | @var string|null
+    */
+
+    'js_datetime' => 'DD MMM YYYY hh:mm a',
+
+    'js_date' => 'DD MMM YYYY',
+
+    'js_time' => 'hh:mm a',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Application Footer Copyrights
+    |--------------------------------------------------------------------------
+    |
+    | This value is the name of your application. This value is used when the
+    | framework needs to place the application's name in a notification or
+    | any other location as required by the application or its packages.
+    |
+    */
+
+    'copyright' => env('APP_COPYRIGHTS', env('APP_NAME', 'Laravel')),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Application Footer Copyrights
+    |--------------------------------------------------------------------------
+    |
+    | This value is the name of your application. This value is used when the
+    | framework needs to place the application's name in a notification or
+    | any other location as required by the application or its packages.
+    |
+    */
+
+    'sidebar' => env('APP_SHORT_NAME', env('APP_NAME', 'Laravel')),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Application Version
+    |--------------------------------------------------------------------------
+    |
+    | This value is the name of your application. This value is used when the
+    | framework needs to place the application's name in a notification or
+    | any other location as required by the application or its packages.
+    |
+    */
+
+    'version' => env('APP_VERSION', '1.0'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Autoloader Service Providers
     |--------------------------------------------------------------------------
     |
     | The service providers listed here will be automatically loaded on the
