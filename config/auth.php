@@ -108,4 +108,54 @@ return [
 
     'password_timeout' => 10800,
 
+    /*
+    |--------------------------------------------------------------------------
+    | Allow Self-Register Route
+    |--------------------------------------------------------------------------
+    |
+    | Here you may define if you want to allow anyone to self-register.
+    | By default, the permission is set to true.
+    |
+    */
+
+    'allow_register' => false,
+
+    /*
+     |--------------------------------------------------------------------
+     | Allow Persistent Login Cookies (Remember me)
+     |--------------------------------------------------------------------
+     |
+     | While every attempt has been made to create a very strong protection
+     | with to remember me system, there are some cases (like when you
+     | need extreme protection, like dealing with users financials) that
+     | you might not want the extra risk associated with this cookie-based
+     | solution.
+     |
+     | @var bool
+     */
+    'allow_remembering' => false,
+
+    /*
+     |--------------------------------------------------------------------
+     | Minimum Password Length
+     |--------------------------------------------------------------------
+     |
+     | The minimum length that a password must be to be accepted.
+     | Recommended minimum value by NIST = 8 characters.
+     |
+     | @var int
+     */
+    'minimum_password_length' => 6,
+
+    /*
+     |--------------------------------------------------------------------
+     | Self Password Reset
+     |--------------------------------------------------------------------
+     |
+     | Allow user to reset his/her own password
+     | If he/she has forgotten
+     |
+     | @var bool
+     */
+    'allow_password_reset' => false,
 ];
