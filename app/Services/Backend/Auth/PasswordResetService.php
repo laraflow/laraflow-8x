@@ -4,7 +4,6 @@ namespace App\Services\Backend\Auth;
 
 use App\Models\Backend\Setting\User;
 use App\Repositories\Eloquent\Backend\Setting\UserRepository;
-use App\Supports\Constant;
 use App\Supports\Utility;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Password;

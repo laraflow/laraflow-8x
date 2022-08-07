@@ -4,7 +4,6 @@ namespace App\Http\Requests\Backend\Auth;
 
 use App\Rules\PhoneNumber;
 use App\Rules\Username;
-use App\Supports\Constant;
 use Illuminate\Foundation\Http\FormRequest;
 
 class PasswordResetRequest extends FormRequest

@@ -3,7 +3,6 @@
 namespace App\Services\Backend\Auth;
 
 use App\Http\Requests\Backend\Auth\LoginRequest;
-use App\Supports\Constant;
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;

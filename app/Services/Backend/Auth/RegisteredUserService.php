@@ -6,7 +6,6 @@ use function __;
 use App\Models\Setting\User;
 use App\Repositories\Eloquent\Backend\Setting\UserRepository;
 use App\Services\Backend\Common\FileUploadService;
-use App\Supports\Constant;
 use App\Supports\Utility;
 use Exception;
 use Illuminate\Support\Facades\Auth;
