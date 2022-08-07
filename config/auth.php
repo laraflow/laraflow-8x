@@ -3,6 +3,42 @@
 return [
 
     /*
+     |--------------------------------------------------------------------
+     | Prefix  on Admin Login Route
+     |--------------------------------------------------------------------
+     |
+     | Adding a Prefix to Admin Login Routes  Group
+     | If there are to section like frontend & backend
+     | then make route separate route group
+     |
+     | @var string
+     */
+    'admin_auth_prefix' => '/',
+
+    /*
+     |--------------------------------------------------------------------
+     | Authentication Medium
+     |--------------------------------------------------------------------
+     |
+     | Authentication medium used to authentication
+     |
+     | @var string [email, username, mobile, otp]
+     */
+    'credential_field' => 'username',
+
+    /*
+     |--------------------------------------------------------------------
+     | OTP Medium
+     |--------------------------------------------------------------------
+     |
+     | OTP Confirmation Medium
+     |
+     | @var string [email, mobile]
+     */
+    'credential_otp_field' => 'mobile',
+
+
+    /*
     |--------------------------------------------------------------------------
     | Authentication Defaults
     |--------------------------------------------------------------------------

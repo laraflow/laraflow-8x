@@ -1,8 +1,12 @@
 <?php
 
+use App\Http\Controllers\Backend\Auth\ConfirmablePasswordController;
+use App\Http\Controllers\Backend\Auth\EmailVerificationNotificationController;
+use App\Http\Controllers\Backend\Auth\EmailVerificationPromptController;
 use App\Http\Controllers\Backend\Auth\LoginController;
 use App\Http\Controllers\Backend\Auth\PasswordResetController;
 use App\Http\Controllers\Backend\Auth\RegisterController;
+use App\Http\Controllers\Backend\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
 /*
