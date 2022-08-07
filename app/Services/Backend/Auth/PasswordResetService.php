@@ -2,12 +2,11 @@
 
 namespace App\Services\Backend\Auth;
 
-use App\Models\Backend\Setting\User;
 use App\Repositories\Eloquent\Backend\Setting\UserRepository;
-use App\Supports\Utility;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
+use Laraflow\Core\Services\Utilities\UtilityService;
 
 class PasswordResetService
 {
@@ -49,7 +48,7 @@ class PasswordResetService
             $credentials,
             function ($user) use ($credentials) {
                 $confirmation = $this->userRepository->update([
-                    'password' => Utility::hashPassword($credentials['password']),
+                    'password' => UtilityService::hashPassword($credentials['password']),
                     'force_pass_reset' => 0,
                     'remember_token' => Str::random(60),
                 ], $user->id);
@@ -61,29 +60,29 @@ class PasswordResetService
             case Password::PASSWORD_RESET:
                 $confirmation = ['status' => true,
                     'message' => __('passwords.reset'),
-                    'level' => config('constant.msg_toastr_success'),
-                    'title' => 'Notification!', ];
+                    'level' => config('constant.message_success'),
+                     ];
                 break;
 
             case Password::RESET_THROTTLED :
                 $confirmation = ['status' => false,
                     'message' => __('auth.throttle', ['seconds' => config('auth.passwords.users.throttle')]),
-                    'level' => config('constant.msg_toastr_error'),
-                    'title' => 'Alert!', ];
+                    'level' => config('constant.message_error'),
+                     ];
                 break;
 
             case Password::INVALID_TOKEN:
                 $confirmation = ['status' => false,
                     'message' => __('passwords.token'),
-                    'level' => config('constant.msg_toastr_error'),
-                    'title' => 'Alert!', ];
+                    'level' => config('constant.message_error'),
+                     ];
                 break;
 
             default:
                 $confirmation = ['status' => false,
                     'message' => __('auth.login.failed'),
-                    'level' => config('constant.msg_toastr_error'),
-                    'title' => 'Alert!', ];
+                    'level' => config('constant.message_error'),
+                     ];
                 break;
         }
 
@@ -106,23 +105,23 @@ class PasswordResetService
             case Password::RESET_LINK_SENT:
                 $confirmation = ['status' => true,
                     'message' => __('auth.token', ['minutes' => config('auth.passwords.users.expire')]),
-                    'level' => config('constant.msg_toastr_success'),
-                    'title' => 'Notification!',
+                    'level' => config('constant.message_success'),
+
                     'token' => $resetToken, ];
                 break;
 
             case Password::RESET_THROTTLED :
                 $confirmation = ['status' => false,
                     'message' => __('auth.throttle', ['seconds' => config('auth.passwords.users.throttle')]),
-                    'level' => config('constant.msg_toastr_error'),
-                    'title' => 'Alert!', ];
+                    'level' => config('constant.message_error'),
+                     ];
                 break;
 
             default:
                 $confirmation = ['status' => false,
                     'message' => __('auth.login.failed'),
-                    'level' => config('constant.msg_toastr_error'),
-                    'title' => 'Alert!', ];
+                    'level' => config('constant.message_error'),
+                     ];
                 break;
         }
 
@@ -135,10 +134,10 @@ class PasswordResetService
      */
     private function otpBasedPasswordReset(array $credential): array
     {
-        $confirmation = ['status' => false, 'message' => __('auth.login.failed'), 'level' => config('constant.msg_toastr_error'), 'title' => 'Alert!'];
+        $confirmation = ['status' => false, 'message' => __('auth.login.failed'), 'level' => config('constant.message_error')];
 
         if (Auth::attempt($credential)) {
-            $confirmation = ['status' => true, 'message' => __('auth.login.success'), 'level' => config('constant.msg_toastr_success'), 'title' => 'Notification'];
+            $confirmation = ['status' => true, 'message' => __('auth.login.success'), 'level' => config('constant.message_success')];
         }
 
         return $confirmation;

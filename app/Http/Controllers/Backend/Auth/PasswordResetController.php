@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Backend\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Backend\Auth\NewPasswordRequest;
 use App\Http\Requests\Backend\Auth\PasswordResetRequest;
+use App\Http\Requests\Backend\Auth\ForgotPasswordRequest;
 use App\Services\Backend\Auth\PasswordResetService;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
@@ -27,9 +29,9 @@ class PasswordResetController extends Controller
     /**
      * Display the password reset link request view.
      *
-     * @return View
+     * @return Application|Factory|\Illuminate\Contracts\View\View|View
      */
-    public function _invoke(): View
+    public function _invoke()
     {
         return view('auth.forgot-password');
     }
@@ -37,10 +39,10 @@ class PasswordResetController extends Controller
     /**
      * Handle an incoming password reset link request.
      *
-     * @param  PasswordResetRequest  $request
+     * @param  ForgotPasswordRequest  $request
      * @return RedirectResponse
      */
-    public function forgot(PasswordResetRequest $request): RedirectResponse
+    public function forgot(ForgotPasswordRequest $request): RedirectResponse
     {
         $inputs = $request->only('email', 'mobile', 'username');
 
@@ -62,7 +64,7 @@ class PasswordResetController extends Controller
         return view('auth.reset-password', ['token' => $token]);
     }
 
-    public function reset(NewPasswordRequest $request): RedirectResponse
+    public function reset(PasswordResetRequest $request): RedirectResponse
     {
         $inputs = $request->only('email', 'mobile', 'username', 'password', 'password_confirmation', 'token');
 

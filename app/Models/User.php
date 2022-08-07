@@ -19,7 +19,19 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'username',
+        'mobile',
         'password',
+        'remarks',
+        'home_page',
+        'locale',
+        'enabled',
+        'force_pass_reset',
+        'email_verified_at',
+        'parent_id',
+        'created_by',
+        'updated_by',
+        'deleted_by',
     ];
 
     /**
@@ -40,4 +52,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function hasRole($role)
+    {
+        return true;
+    }
 }

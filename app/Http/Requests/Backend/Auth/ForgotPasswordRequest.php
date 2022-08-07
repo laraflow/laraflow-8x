@@ -1,13 +1,11 @@
 <?php
 
 namespace App\Http\Requests\Backend\Auth;
-
-use App\Rules\PhoneNumber;
-use App\Rules\Username;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rules\Password;
+use Laraflow\Core\Rules\PhoneNumber;
+use Laraflow\Core\Rules\Username;
 
-class NewPasswordRequest extends FormRequest
+class ForgotPasswordRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -40,13 +38,6 @@ class NewPasswordRequest extends FormRequest
         } elseif (config('auth.credential_field') == config('constant.login_username')) {
             $rules['username'] = ['required', new Username, 'min:5', 'max:255', 'string'];
         }
-
-        //Password Field
-        if (config('auth.credential_field') != config('constant.login_otp')) {
-            $rules['password'] = ['required', 'min:'.config('auth.minimum_password_length'), 'max:255', 'string', 'confirmed', Password::defaults()];
-        }
-
-        $rules['token'] = ['required', 'min:40', 'max:255'];
 
         return $rules;
     }

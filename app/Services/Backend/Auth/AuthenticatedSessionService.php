@@ -106,10 +106,10 @@ class AuthenticatedSessionService
             $request->session()->regenerateToken();
 
             return ['status' => true, 'message' => 'User Logout Successful',
-                'level' => config('constant.msg_toastr_success'), 'title' => 'Notification!',];
+                'level' => config('constant.message_success'), ];
         } catch (\Exception $exception) {
             return ['status' => false, 'message' => 'Error: ' . $exception->getMessage(),
-                'level' => config('constant.msg_toastr_error'), 'title' => 'Error!',];
+                'level' => config('constant.message_error'), ];
         }
     }
 
@@ -170,8 +170,8 @@ class AuthenticatedSessionService
 
         $confirmation = ['status' => false,
             'message' => __('auth.login.failed'),
-            'level' => config('constant.msg_toastr_error'),
-            'title' => 'Alert!',];
+            'level' => config('constant.message_error'),
+            ];
 
         if (config('auth.allow_remembering')) {
             $remember_me = $request->boolean('remember');
@@ -191,8 +191,8 @@ class AuthenticatedSessionService
                 Auth::logout();
                 $confirmation = ['status' => false,
                     'message' => __('auth.login.banned'),
-                    'level' => config('constant.msg_toastr_warning'),
-                    'title' => 'Alert!',];
+                    'level' => config('constant.message_warning'),
+                    ];
             } elseif ($this->hasForcePasswordReset()) {
                 //make this user as guest to reset password
                 Auth::logout();
@@ -203,8 +203,8 @@ class AuthenticatedSessionService
                 //reset message
                 $confirmation = ['status' => true,
                     'message' => __('auth.login.forced'),
-                    'level' => config('constant.msg_toastr_warning'),
-                    'title' => 'Notification!',
+                    'level' => config('constant.message_warning'),
+
                     'landing_page' => route('auth.password.reset', $tokenInfo['token']),];
             } else {
                 //set the auth user redirect page
@@ -222,10 +222,10 @@ class AuthenticatedSessionService
      */
     private function credentialBasedLogin(array $credential, bool $remember_me = false): array
     {
-        $confirmation = ['status' => false, 'message' => __('auth.login.failed'), 'level' => config('constant.msg_toastr_error'), 'title' => 'Alert!'];
+        $confirmation = ['status' => false, 'message' => __('auth.login.failed'), 'level' => config('constant.message_error')];
 
         if (Auth::attempt($credential, $remember_me)) {
-            $confirmation = ['status' => true, 'message' => __('auth.login.success'), 'level' => config('constant.msg_toastr_success'), 'title' => 'Notification'];
+            $confirmation = ['status' => true, 'message' => __('auth.login.success'), 'level' => config('constant.message_success')];
         }
 
         return $confirmation;
@@ -238,10 +238,10 @@ class AuthenticatedSessionService
      */
     private function otpBasedLogin(array $credential, bool $remember_me = false): array
     {
-        $confirmation = ['status' => false, 'message' => __('auth.login.failed'), 'level' => config('constant.msg_toastr_error'), 'title' => 'Alert!'];
+        $confirmation = ['status' => false, 'message' => __('auth.login.failed'), 'level' => config('constant.message_error')];
 
         if (Auth::attempt($credential, $remember_me)) {
-            $confirmation = ['status' => true, 'message' => __('auth.login.success'), 'level' => config('constant.msg_toastr_success'), 'title' => 'Notification'];
+            $confirmation = ['status' => true, 'message' => __('auth.login.success'), 'level' => config('constant.message_success')];
         }
 
         return $confirmation;
@@ -256,7 +256,7 @@ class AuthenticatedSessionService
     private function ensureIsNotRateLimited(LoginRequest $request): array
     {
         if (!RateLimiter::tooManyAttempts($this->throttleKey($request), 5)) {
-            return ['status' => true, 'message' => __('auth.throttle'), 'level' => config('constant.msg_toastr_warning'), 'title' => 'Warning'];
+            return ['status' => true, 'message' => __('auth.throttle'), 'level' => config('constant.message_warning')];
         }
 
         event(new Lockout($request));
@@ -266,7 +266,7 @@ class AuthenticatedSessionService
         return ['status' => false, 'message' => __('auth.throttle', [
             'seconds' => $seconds,
             'minutes' => ceil($seconds / 60),
-        ]), 'level' => config('constant.msg_toastr_warning'), 'title' => 'Warning'];
+        ]), 'level' => config('constant.message_warning')];
     }
 
     /**

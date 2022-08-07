@@ -58,17 +58,17 @@ class RegisteredUserService
 
                     Auth::login($newUser);
 
-                    return ['status' => true, 'message' => __('auth.register.success'), 'level' => config('constant.msg_toastr_success'), 'title' => 'Authentication'];
+                    return ['status' => true, 'message' => __('auth.register.success'), 'level' => config('constant.message_success')];
                 } else {
-                    return ['status' => false, 'message' => __('auth.register.failed'), 'level' => config('constant.msg_toastr_warning'), 'title' => 'Alert!'];
+                    return ['status' => false, 'message' => __('auth.register.failed'), 'level' => config('constant.message_warning')];
                 }
             } else {
-                return ['status' => false, 'message' => 'User model creation failed', 'level' => config('constant.msg_toastr_error'), 'title' => 'Error!'];
+                return ['status' => false, 'message' => 'User model creation failed', 'level' => config('constant.message_error')];
             }
         } catch (\Exception $exception) {
             $this->userRepository->handleException($exception);
 
-            return ['status' => false, 'message' => __($exception->getMessage()), 'level' => config('constant.msg_toastr_error'), 'title' => 'Error!'];
+            return ['status' => false, 'message' => __($exception->getMessage()), 'level' => config('constant.message_error')];
         }
     }
 
