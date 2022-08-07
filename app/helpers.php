@@ -8,9 +8,9 @@ if (! function_exists('resource')) {
      * @param  bool|null  $secure
      * @return string
      */
-    function resource($path, $secure = null)
+    function resource(string $path, $secure = null)
     {
-        if (preg_match('^(http|https|//)', $path) > 0) {
+        if (preg_match('/^(http|https|\/\/)/', $path) > 0) {
             return $path;
         }
 
