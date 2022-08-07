@@ -9,7 +9,6 @@ parameters:
         - database
         - resources
     tmpDir: build/phpstan
-    checkOctaneCompatibility: false
     checkModelProperties: true
     checkMissingIterableValueType: false
 
