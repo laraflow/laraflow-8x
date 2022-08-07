@@ -775,13 +775,13 @@
 <script src="{{ asset('/plugins/jqvmap/jquery.vmap.min.js') }}"></script>
 <script src="{{ asset('/plugins/jqvmap/maps/jquery.vmap.usa.js') }}"></script>
 
-<script src="{{ asset('/assets/js/dashforge.js') }}"></script>
-<script src="{{ asset('/assets/js/dashforge.sampledata.js') }}"></script>
+<script src="{{ asset('/assets/js/app.js') }}"></script>
+<script src="{{ asset('/assets/js/app.sampledata.js') }}"></script>
 <script src="{{ asset('/assets/js/dashboard-one.js') }}"></script>
 
 <!-- append theme customizer -->
 <script src="{{ asset('/plugins/js-cookie/js.cookie.js') }}"></script>
-<script src="{{ asset('/assets/js/dashforge.settings.js') }}"></script>
+<script src="{{ asset('/assets/js/app.settings.js') }}"></script>
 
 
 </body>
