@@ -37,7 +37,6 @@ return [
      */
     'credential_otp_field' => 'mobile',
 
-
     /*
     |--------------------------------------------------------------------------
     | Authentication Defaults
