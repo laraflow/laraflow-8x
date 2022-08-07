@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Backend\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\NewPasswordRequest;
-use App\Http\Requests\Auth\PasswordResetRequest;
-use App\Services\Auth\PasswordResetService;
+use App\Http\Requests\Backend\Auth\NewPasswordRequest;
+use App\Http\Requests\Backend\Auth\PasswordResetRequest;
+use App\Services\Backend\Auth\PasswordResetService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
@@ -29,7 +29,7 @@ class PasswordResetController extends Controller
      *
      * @return View
      */
-    public function create(): View
+    public function _invoke(): View
     {
         return view('auth.forgot-password');
     }
@@ -40,41 +40,41 @@ class PasswordResetController extends Controller
      * @param  PasswordResetRequest  $request
      * @return RedirectResponse
      */
-    public function store(PasswordResetRequest $request): RedirectResponse
+    public function forgot(PasswordResetRequest $request): RedirectResponse
     {
         $inputs = $request->only('email', 'mobile', 'username');
 
         $confirm = $this->passwordResetService->createPasswordResetToken($inputs);
 
         if ($confirm['status'] === true) {
-            notify($confirm['message'], $confirm['level'], $confirm['title']);
+            flasher($confirm['message'], $confirm['level']);
 
             return redirect()->to(route('auth.password.reset', $confirm['token']));
         }
 
-        notify($confirm['message'], $confirm['level'], $confirm['title']);
+        flasher($confirm['message'], $confirm['level']);
 
         return redirect()->back();
     }
 
-    public function edit($token)
+    public function token($token)
     {
         return view('auth.reset-password', ['token' => $token]);
     }
 
-    public function update(NewPasswordRequest $request)
+    public function reset(NewPasswordRequest $request): RedirectResponse
     {
         $inputs = $request->only('email', 'mobile', 'username', 'password', 'password_confirmation', 'token');
 
         $confirm = $this->passwordResetService->updatePassword($inputs);
 
         if ($confirm['status'] === true) {
-            notify($confirm['message'], $confirm['level'], $confirm['title']);
+            flasher($confirm['message'], $confirm['level']);
 
             return redirect()->to(route('auth.login'));
         }
 
-        notify($confirm['message'], $confirm['level'], $confirm['title']);
+        flasher($confirm['message'], $confirm['level']);
 
         return redirect()->back();
     }
