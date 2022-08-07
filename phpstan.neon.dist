@@ -19,5 +19,5 @@ parameters:
 
     checkMissingIterableValueType: false
 
-    ignoreErrors:
-        - '#Call to an undefined method .*badMethod\(\)#'
+#    ignoreErrors:
+#        - '#Call to an undefined method .*badMethod\(\)#'
