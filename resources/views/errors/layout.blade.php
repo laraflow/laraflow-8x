@@ -35,7 +35,7 @@
             <h5 class="tx-16 tx-sm-18 tx-lg-20 tx-normal mg-b-20">@yield('message')</h5>
             <p class="tx-color-03 mg-b-30">We've been automatically alerted of the issue and will work to fix it asap.</p>
             <div class="mg-b-40"><button class="btn btn-white bd-2 pd-x-30">Back to Home</button></div>
-            {{--@include('includes.error-search')--}}
+            {{--@includeIf(response()->getStatusCode() != 404, 'includes.error-search')--}}
         </div>
     </div><!-- container -->
 </div>
