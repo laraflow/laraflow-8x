@@ -108,8 +108,9 @@ function compileHotReload() {
 
 exports.serve = serve;
 exports.npmDep = npmDep;
-exports.compileStyle = compileStyle;
-exports.compileSkinStyle = compileSkinStyle;
-exports.compilePageStyle = compilePageStyle;
+exports.scss = series(compileStyle, compilePageStyle, compileSkinStyle);
+exports.js = copyJavaScript;
+exports.img = copyImage;
+exports.font = copyFonts;
 exports.develop = parallel(npmDep, series(compileStyle, compilePageStyle, compileSkinStyle, copyImage, copyFonts, copyJavaScript));
 exports.watch = compileHotReload;

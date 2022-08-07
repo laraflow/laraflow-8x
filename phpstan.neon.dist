@@ -2,13 +2,22 @@ includes:
     - phpstan-baseline.neon
 
 parameters:
-    level: 4
+
     paths:
-        - src
+        - app
         - config
         - database
+        - resources
+
+    level: 4
+
     tmpDir: build/phpstan
+
     checkOctaneCompatibility: true
+
     checkModelProperties: true
+
     checkMissingIterableValueType: false
 
+#    ignoreErrors:
+#        - '#Call to an undefined method .*badMethod\(\)#'
