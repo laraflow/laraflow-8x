@@ -3,16 +3,17 @@
 namespace App\Http\Controllers\Backend\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\LoginRequest;
-use App\Services\Auth\AuthenticatedSessionService;
+use App\Http\Requests\Backend\Auth\LoginRequest;
+use App\Services\Backend\Auth\AuthenticatedSessionService;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 /**
- * @class AuthenticatedSessionController
+ * Class LoginController
+ * @package App\Http\Controllers\Backend\Auth
  */
-class AuthenticatedSessionController extends Controller
+class LoginController extends Controller
 {
     /**
      * @var AuthenticatedSessionService
@@ -20,7 +21,7 @@ class AuthenticatedSessionController extends Controller
     private $authenticatedSessionService;
 
     /**
-     * @param  AuthenticatedSessionService  $authenticatedSessionService
+     * @param AuthenticatedSessionService $authenticatedSessionService
      */
     public function __construct(AuthenticatedSessionService $authenticatedSessionService)
     {
@@ -32,7 +33,7 @@ class AuthenticatedSessionController extends Controller
      *
      * @return View
      */
-    public function create(): View
+    public function __invoke(): View
     {
         return view('auth.login');
     }
@@ -40,20 +41,21 @@ class AuthenticatedSessionController extends Controller
     /**
      * Handle an incoming auth request.
      *
-     * @param  LoginRequest  $request
+     * @param LoginRequest $request
      * @return RedirectResponse
      */
-    public function store(LoginRequest $request): RedirectResponse
+    public function login(LoginRequest $request): RedirectResponse
     {
         $confirm = $this->authenticatedSessionService->attemptLogin($request);
 
         if ($confirm['status'] === true) {
-            notify($confirm['message'], $confirm['level'], $confirm['title']);
+
+            flasher($confirm['message'], $confirm['level']);
 
             return redirect()->to($confirm['landing_page']);
         }
 
-        notify($confirm['message'], $confirm['level'], $confirm['title']);
+        flasher($confirm['message'], $confirm['level']);
 
         return redirect()->back();
     }
@@ -61,19 +63,19 @@ class AuthenticatedSessionController extends Controller
     /**
      * Destroy an authenticated session.
      *
-     * @param  Request  $request
+     * @param Request $request
      * @return RedirectResponse
      */
-    public function destroy(Request $request): RedirectResponse
+    public function logout(Request $request): RedirectResponse
     {
         $confirm = $this->authenticatedSessionService->attemptLogout($request);
         if ($confirm['status'] === true) {
-            notify($confirm['message'], $confirm['level'], $confirm['title']);
+            flasher($confirm['message'], $confirm['level']);
 
             return redirect()->to(route('home'));
         }
 
-        notify($confirm['message'], $confirm['level'], $confirm['title']);
+        flasher($confirm['message'], $confirm['level']);
 
         return redirect()->back();
     }

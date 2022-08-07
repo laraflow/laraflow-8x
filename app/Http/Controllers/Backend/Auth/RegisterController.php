@@ -10,7 +10,7 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 
-class RegisteredUserController extends Controller
+class RegisterController extends Controller
 {
     /**
      * @var RegisteredUserService
@@ -51,11 +51,11 @@ class RegisteredUserController extends Controller
         $confirm = $this->registeredUserService->attemptRegistration($inputs);
 
         if ($confirm['status'] == true) {
-            notify($confirm['message'], $confirm['level'], $confirm['title']);
+            flasher($confirm['message'], $confirm['level']);
 
             return redirect()->route(config('backend.config.home_url', 'admin.'));
         } else {
-            notify($confirm['message'], $confirm['level'], $confirm['title']);
+            flasher($confirm['message'], $confirm['level']);
 
             return redirect()->back();
         }
