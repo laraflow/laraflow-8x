@@ -11,7 +11,6 @@ use Illuminate\Http\Request;
 
 /**
  * Class LoginController
- * @package App\Http\Controllers\Backend\Auth
  */
 class LoginController extends Controller
 {
@@ -21,7 +20,7 @@ class LoginController extends Controller
     private $authenticatedSessionService;
 
     /**
-     * @param AuthenticatedSessionService $authenticatedSessionService
+     * @param  AuthenticatedSessionService  $authenticatedSessionService
      */
     public function __construct(AuthenticatedSessionService $authenticatedSessionService)
     {
@@ -41,7 +40,7 @@ class LoginController extends Controller
     /**
      * Handle an incoming auth request.
      *
-     * @param LoginRequest $request
+     * @param  LoginRequest  $request
      * @return RedirectResponse
      */
     public function login(LoginRequest $request): RedirectResponse
@@ -49,7 +48,6 @@ class LoginController extends Controller
         $confirm = $this->authenticatedSessionService->attemptLogin($request);
 
         if ($confirm['status'] === true) {
-
             flasher($confirm['message'], $confirm['level']);
 
             return redirect()->to($confirm['landing_page']);
@@ -63,7 +61,7 @@ class LoginController extends Controller
     /**
      * Destroy an authenticated session.
      *
-     * @param Request $request
+     * @param  Request  $request
      * @return RedirectResponse
      */
     public function logout(Request $request): RedirectResponse
