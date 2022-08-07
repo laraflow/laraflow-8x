@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Backend\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Backend\Auth\PasswordResetRequest;
 use App\Http\Requests\Backend\Auth\ForgotPasswordRequest;
+use App\Http\Requests\Backend\Auth\PasswordResetRequest;
 use App\Services\Backend\Auth\PasswordResetService;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;

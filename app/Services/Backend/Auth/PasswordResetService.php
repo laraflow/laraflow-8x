@@ -61,28 +61,28 @@ class PasswordResetService
                 $confirmation = ['status' => true,
                     'message' => __('passwords.reset'),
                     'level' => config('constant.message_success'),
-                     ];
+                ];
                 break;
 
             case Password::RESET_THROTTLED :
                 $confirmation = ['status' => false,
                     'message' => __('auth.throttle', ['seconds' => config('auth.passwords.users.throttle')]),
                     'level' => config('constant.message_error'),
-                     ];
+                ];
                 break;
 
             case Password::INVALID_TOKEN:
                 $confirmation = ['status' => false,
                     'message' => __('passwords.token'),
                     'level' => config('constant.message_error'),
-                     ];
+                ];
                 break;
 
             default:
                 $confirmation = ['status' => false,
                     'message' => __('auth.login.failed'),
                     'level' => config('constant.message_error'),
-                     ];
+                ];
                 break;
         }
 
@@ -114,14 +114,14 @@ class PasswordResetService
                 $confirmation = ['status' => false,
                     'message' => __('auth.throttle', ['seconds' => config('auth.passwords.users.throttle')]),
                     'level' => config('constant.message_error'),
-                     ];
+                ];
                 break;
 
             default:
                 $confirmation = ['status' => false,
                     'message' => __('auth.login.failed'),
                     'level' => config('constant.message_error'),
-                     ];
+                ];
                 break;
         }
 
